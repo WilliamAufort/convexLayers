@@ -27,3 +27,8 @@
 *.exe
 *.out
 *.app
+
+# Private work and build
+build/*
+results/*
+scripts/*

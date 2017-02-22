@@ -4,7 +4,7 @@
 using namespace std;
 
 /**
-* The (naive) minkowski sum P + P
+* The (naive) Minkowski sum P + P
 **/
 
 set<pair<int,int>> NaiveIteration(set<pair<int,int>> s, set<pair<int,int>> init)
@@ -21,7 +21,7 @@ set<pair<int,int>> NaiveIteration(set<pair<int,int>> s, set<pair<int,int>> init)
 }
 
 /**
-* The powering of a set
+* The powering of a set (P + P + ... + P)
 **/
 
 set<pair<int,int>> powering(set<pair<int,int>> init, int nbIterations)
@@ -38,7 +38,7 @@ set<pair<int,int>> powering(set<pair<int,int>> init, int nbIterations)
 
 
 /**
-* The counter-example used
+* The counter-example used : a sum of two vertices at distance 2 can be on the fourth layer
 **/
 
 set<pair<int,int>> buildCounterExample()

@@ -1,12 +1,10 @@
-/***********************************
-* Minkowski sums of identical sets *
-************************************/
+/*****************************************************\
+| Very old statistics, in case I really need it again |
+\*****************************************************/
 
 #include <iostream>
 #include <cmath>
-#include <set>
-#include <utility> // pair
-#include <vector>
+#include "../include/minkowski.hpp"
 
 using namespace std;
 
@@ -17,19 +15,6 @@ void print_set(set<pair<int,int>> s)
 	cout << endl;
 }
 
-set<pair<int,int>> NaiveIteration(set<pair<int,int>> s, set<pair<int,int>> init) // Naive but OK
-{
-	set<pair<int,int>> result;
-
-	for (set<pair<int,int>>::iterator it1 = init.begin(); it1 != init.end(); ++it1)
-	for (set<pair<int,int>>::iterator it2 = s.begin(); it2 != s.end(); ++it2)
-	{
-		pair<int,int> p = make_pair(it1->first + it2->first, it1->second + it2->second);
-		result.insert(p);
-	}
-	return result;
-}
-
 void generate_logs(int nb_iterations) {
 	cout << "x <- c(";
 	for (int i = 1; i < nb_iterations; i++) {
@@ -37,7 +22,6 @@ void generate_logs(int nb_iterations) {
 	}
 	cout << log(nb_iterations) << ")" << endl;
 }
-
 
 void generate_R_script(vector<int> sizes, int nb_iterations, bool log_plot) {
 	cout << "# R script automatically generated" << endl;
@@ -54,15 +38,6 @@ void generate_R_script(vector<int> sizes, int nb_iterations, bool log_plot) {
 	if (log_plot) { cout << log(sizes[nb_iterations]) << ")" << endl;}
 	else 		  { cout << sizes[nb_iterations] << ")" << endl;}
 	cout << "plot(x,y, xlab=\"iterations\", ylab=\"number of monomials\", main=\"Size of a Minkowski sum of powers of a polynomial\", pch=20)";	
-}
-
-set<pair<int,int>> test_polygon(int t)
-{
-	set<pair<int,int>> init;
-	init.insert(make_pair(10,1));
-	init.insert(make_pair(1,9));
-	init.insert(make_pair(1,1));
-	return init;
 }
 
 set<pair<int,int>> build_my_polygon(int t)

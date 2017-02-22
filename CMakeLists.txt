@@ -21,13 +21,13 @@ LINK_DIRECTORIES(${DGTAL_LIBRARY_DIRS})
 
 set(CMAKE_CXX_FLAGS "-std=c++0x ${CMAKE_CXX_FLAGS}")
 
-# ConvexLayers
-add_executable(convexLayers src/convexLayers.cpp)
+# convexLayers
+add_executable(convexLayers src/main.cpp src/parserArguments.cpp src/convexHulls.cpp src/minkowski.cpp)
 target_link_libraries(convexLayers ${DGTAL_LIBRARIES})
 
-# Polynomials
-add_executable(polynomial src/polynomial.cpp)
+# some stats
+add_executable(stats src/stats.cpp src/convexHulls.cpp)
+target_link_libraries(stats ${DGTAL_LIBRARIES})
 
-# Program
-add_executable(program src/program.cpp src/parserArguments.cpp src/convexHulls.cpp src/minkowski.cpp)
-target_link_libraries(program ${DGTAL_LIBRARIES})
+# some older stats
+add_executable(old src/old.cpp)

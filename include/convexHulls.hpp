@@ -84,7 +84,7 @@ void drawPointset(const ForwardIterator& itb, const ForwardIterator& ite, Board&
 			aBoard << p;
 }	}	}
 
-/* Convex layers */
+/* Convex layers functions */
 
 std::vector<Point> getDiff(std::vector<Point> points, std::vector<Point> layer);
 std::vector<std::vector<Point>> getLayers(std::vector<Point> data);
@@ -111,4 +111,3 @@ void drawLayers(const ForwardIterator& itb, const ForwardIterator& ite, Board& a
 		drawPolygon(it->begin(),it->end(),aBoard,c);
 		compteur++;
 }	}
-

@@ -12,7 +12,6 @@ int main(int argc, char* argv[])
 	if (arguments.askHelp())
 	{
 		cout << endl << "Use the following syntax :" << endl;
-		cout << "./program --stats    For the default statistics" << endl;
 		cout << "./program --cex      To display the counter-example" << endl;
 		cout << "For a general usage, there are the following options :" << endl;
 		cout << "-i=input             Import a polygon in a text file (see polygon.txt)" << endl;
@@ -22,16 +21,7 @@ int main(int argc, char* argv[])
 		return EXIT_FAILURE;
 	}
 
-	// Set the options
-	bool optStats = arguments.getOption("-stats");
-	bool optCex = arguments.getOption("-cex");
-
-	if (optStats) {
-		cout << "Not implemented yet" << endl;
-		// TODO Just copy-paste, not used anymore in the internship
-	}
-
-	else if (optCex) {
+	if (arguments.getOption("-cex")) {
 		Board2D board;
 		set<pair<int,int>> init = buildCounterExample();
 		set<pair<int,int>> s = NaiveIteration(init,init);

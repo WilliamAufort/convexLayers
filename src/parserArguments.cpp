@@ -123,9 +123,8 @@ string parserArguments::getParameter(string name, string def) const
 
 vector<string> parserArguments::getOptionsNames()
 {
-	vector<string> liste(2);
-	liste[0] = "-stats";
-	liste[1] = "-cex";
+	vector<string> liste(1);
+	liste[0] = "-cex";
 	return liste;
 }
 

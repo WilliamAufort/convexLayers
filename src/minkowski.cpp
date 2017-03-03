@@ -36,22 +36,9 @@ set<pair<int,int>> powering(set<pair<int,int>> init, int nbIterations)
 	return s;
 }
 
-
 /**
-* The counter-example used : a sum of two vertices at distance 2 can be on the fourth layer
+* Read a polygon contained in a file
 **/
-
-set<pair<int,int>> buildCounterExample()
-{
-	set<pair<int,int>> init;
-	init.insert(make_pair(2,0));
-	init.insert(make_pair(6,0));
-	init.insert(make_pair(10,6));
-	init.insert(make_pair(10,8));
-	init.insert(make_pair(0,2));
-
-	return init;	
-}
 
 set<pair<int,int>> readFile(string filename)
 {

@@ -123,8 +123,7 @@ string parserArguments::getParameter(string name, string def) const
 
 vector<string> parserArguments::getOptionsNames()
 {
-	vector<string> liste(1);
-	liste[0] = "-cex";
+	vector<string> liste;
 	return liste;
 }
 

@@ -25,6 +25,10 @@ set(CMAKE_CXX_FLAGS "-std=c++0x ${CMAKE_CXX_FLAGS}")
 add_executable(convexLayers src/main.cpp src/parserArguments.cpp src/convexHulls.cpp src/minkowski.cpp)
 target_link_libraries(convexLayers ${DGTAL_LIBRARIES})
 
+# build regular polygons
+add_executable(regularPolygons src/regularPolygons.cpp src/convexHulls.cpp src/minkowski.cpp)
+target_link_libraries(regularPolygons ${DGTAL_LIBRARIES})
+
 # some stats
 add_executable(stats src/stats.cpp src/convexHulls.cpp)
 target_link_libraries(stats ${DGTAL_LIBRARIES})

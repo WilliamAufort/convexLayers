@@ -101,7 +101,7 @@ void drawLayers(const ForwardIterator& itb, const ForwardIterator& ite, Board& a
     BOOST_CONCEPT_ASSERT(( boost_concepts::ReadableIteratorConcept<ForwardIterator> )); 
     typedef typename IteratorCirculatorTraits<ForwardIterator>::Value Point; 
 
-	HueShadeColorMap<double> colorMap(1,size);
+	HueShadeColorMap<double> colorMap(1,size+1);
 	unsigned int compteur = 1;
     ForwardIterator it = itb;
 
